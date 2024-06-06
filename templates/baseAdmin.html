@@ -1,0 +1,66 @@
+<!--base.html-->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='base_login.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='table.css')}}">
+    <link rel="icon" type="image/png" href="{{url_for('static', filename='muquito.png')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='temporeal.css')}}">
+    <title>BuzzAway</title>
+</head>
+<body>
+    <div class="navbar">
+        <img class="icon2" src="{{url_for('static', filename='image.png')}}" alt="">
+        <img  class="icon" src="{{url_for('static', filename='muquito.png')}}" alt="Mosquito.png">
+        <a href="/base">Home</a>
+        <div class="dropdown">
+            <a href="#" >Menu</a>
+            <div class="dropdown-content">
+                <a href="/register_sensor">Cadastrar Sensores</a>
+                <a href="/register_actuator">Cadastrar Atuadores</a>
+                <a href="/list_sensors">Listar Sensores</a>
+                <a href="/list_actuator">Listar Atuadores</a>
+            </div>
+        </div>
+            <div class="dropdown">
+            <a href="#">Dados em tempo real</a>
+            <div class="dropdown-content">
+                <a href="/temporeal">Temperatura/Umidade</a>
+                <a href="temporeal_ultrassom">Sensor Ultrasônico</a>
+                <a href="/temporeal_buzzer">Buzzer</a>
+                <a href="/temporeal_led">Led</a>
+                <a href="/temporeal_local">Situação do Ambiente</a>
+            </div>
+        </div>
+        <div>
+            <div class="dropdown">
+                <a href="#">Histórico</a>
+                <div class="dropdown-content">
+                    <a href="/history_read">Sensores</a>
+                    <a href="/history_write">Atuadores</a>
+                </div>
+            </div>
+        </div>
+        <a href="/contact">Contato</a>
+        <div class="login">
+            <a href="/loginAdmin">Admin</a>
+            <a href="/login">Login</a>
+        </div>
+    </div>
+
+    <div class="title-container" >
+        {% block title %}
+        {% endblock %}
+    </div>
+    <div class="main-container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Empresa BuzzAway. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{{url_for('static', filename='base_login.css')}}">
+	<link rel="icon" type="image/png" href="{{url_for('static', filename='muquito.png')}}">
+	<title>Document</title>
+</head>
+<body>
+	<header>
+		<nav>
+			<div class="logo">
+				<img src="{{url_for('static', filename='muquito.png')}}" alt="Logo">
+			</div>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="#">Sobre</a></li>
+			</ul>
+		</nav>
+	</header>
+	<form id="loginForm"  action = action="/login" method = "post">
+		<h2>Login Admin</h2>
+		<p class="whiteText">Usuário Admin:</p>
+	   <p><input type="text" id="user" name="user" placeholder="Usuário" required></p>
+		<p class="whiteText">Senha:</p>
+	   <p><input type="password" id="password" name="password" placeholder="*******" required></p>
+	   <div id="errorMessage" class="error-message"></div>
+	   <p><input type = "submit" value = "Entrar" /></p>
+	</form>   	
+
+	<script src="{{url_for('static', filename='admin.js')}}"></script>
+</body>
+</html>

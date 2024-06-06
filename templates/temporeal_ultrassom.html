@@ -1,0 +1,26 @@
+{% extends "baseAdmin.html" %}
+<html>
+<head>
+    {% block title %}
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="5">
+    {% endblock %}
+</head>
+<body>
+    <div id="content">
+        {% block content %}
+        <ul>
+            {% for key, value in values.items() %}
+                {% if key == 'ultrassom' %}
+                    <li class="centered">
+                        <p>Sensor Ultrassônico:</p>
+                        <img src="{{ url_for('static', filename='ultrassonico.png') }}" width="60" height="60" alt="">
+                        <span>{{ value }} Centímetros</span>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        {% endblock %}
+    </div>
+</body>
+</html>

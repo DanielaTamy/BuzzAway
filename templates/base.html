@@ -1,0 +1,56 @@
+<!--base.html-->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='esp32product.css')}}">
+    <link rel="icon" type="image/png" href="{{url_for('static', filename='muquito.png')}}">
+    <title>BuzzAway</title>
+</head>
+<body>
+    <div class="navbar">
+        <img class="icon2" src="{{url_for('static', filename='image.png')}}" alt="">
+        <img  class="icon" src="{{url_for('static', filename='muquito.png')}}" alt="Mosquito.png">
+        <a href="/base">Home</a>
+        <div class="dropdown">
+            <a href="#" >Produtos</a>
+            <div class="dropdown-content">
+                <a href="/esp32product">ESP32 Para Mosquitos</a>
+            </div>
+        </div>
+            <div class="dropdown">
+            <a href="#">ESP32</a>
+            <div class="dropdown-content">
+                <a href="https://www.eletrogate.com/esp32" target="_blank">Onde Comprar</a>
+                <a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/d/dengue">Dengue não!</a>
+            </div>
+        </div>
+        <a href="/contact">Contato</a>
+        <div class="login">
+            <a href="/signup">Register</a>
+            <a href="/loginAdmin">Admin</a>
+            <a href="/login">Login</a>
+        </div>
+    </div>
+
+    <div class="title-container">
+        {% block content %}
+        
+    </div>
+    <div class="title-container2">
+        
+        <br>
+        <h1> A dengue mata. Dê um Buzz. </h1>
+        <br>
+        <h3> A tecnologia BuzzAway™ permite detectar um ambiente propício para a proliferação de mosquitos e atordoa-los com um buzzer de baixa frequência. </h3>
+        <img class= "buzz" src="{{url_for('static', filename='uzzzz.png')}}"> 
+        {% endblock %}
+    </div>
+</div>
+    
+    <footer>
+        <p>&copy; 2024 Empresa BuzzAway. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

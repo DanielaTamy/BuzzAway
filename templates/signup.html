@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='base_login.css')}}">
+    <link rel="icon" type="image/png" href="{{url_for('static', filename='muquito.png')}}">
+    <title>Sign-up</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="{{url_for('static', filename='muquito.png')}}" alt="Logo">
+            </div>
+            <ul>
+                <li><a href="/base">Home</a></li>
+                <li><a href="signup">Sign-up</a></li>
+            </ul>
+        </nav>
+    </header>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, message in messages %}
+        <div class="notification {% if category == 'error' %}is-danger{% elif category == 'success' %}is-success{% endif %}">
+            {{ message }} {% if category == 'error' %}. Go to <a href="{{ url_for('signup') }}"></a>.{% endif %}
+        </div>
+    {% endfor %}
+    {% endwith %}
+    
+    <form id="loginForm" action="/signup" method="post">
+        <h2>Sign-up</h2>
+        <p class="whiteText">Usuário:</p>
+        <p><input type="text" id="user" name="user" placeholder="Usuário" required></p>
+        <p class="whiteText">Email:</p>
+        <p><input type="email" id="email" name="email" placeholder="Email" required></p>
+        <p class="whiteText">Senha:</p>
+        <p><input type="password" id="password" name="password" placeholder="*******" required></p>
+        <p><input type="submit" value="Sign-up"/></p>
+    </form>   
+
+    <script src="{{url_for('static', filename='login.js')}}"></script>
+</body>
+</html>

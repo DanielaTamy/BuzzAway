@@ -1,0 +1,35 @@
+{% extends "baseAdmin.html" %}
+<html>
+<head>
+    {% block title %}
+    <meta charset="UTF-8">
+    <title>Modulo IOT</title>
+    <meta http-equiv="refresh" content="5">
+    {% endblock %}
+</head>
+<body>
+    <div id="content">
+        {% block content %}
+        <ul>
+            {% for key, value in values.items() %}
+                {% if key == 'temperature' %}
+                    <li class="centered">
+                        
+                        <p>Temperatura:</p>
+                        <img class="img"  src="{{ url_for('static', filename='term.png') }}" width="60" height="60" alt="">
+                        <span>{{ value }} ºC</span>
+                    </li>
+                {% else %}
+                    <li class="centered" >
+                        <p>Humidade:</p>
+                        <img src="{{url_for('static', filename='humidity.png')}}"
+                        idth="60" height="50" alt="">
+                        <span>{{ value }} %</span>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        {% endblock %}
+    </div>
+</body>
+</html>

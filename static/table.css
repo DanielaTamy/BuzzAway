@@ -1,0 +1,53 @@
+/* Estilo para a tabela */
+.styled-table {
+    margin: 50px auto;
+    margin-top: 50px;
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    margin-bottom: -20px;
+  }
+  
+  .styled-table th,
+  .styled-table td {
+    padding: 20px;
+    border: 10px solid #ddd;
+    text-align: left;
+  }
+  
+  /* Estilo para as células de cabeçalho */
+  .styled-table th {
+    
+    background-color: #f2f2f2;
+  }
+  
+  /* Estilo para células alternadas */
+  .styled-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+.delButton{
+    text-decoration: none, underline;
+    color: black;
+    
+}
+
+.sensorForm{
+    width: 100%;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	background-color: #007bff;
+	color: #fff;
+	cursor: pointer;
+	font-size: 16px;
+	transition: background-color 0.3s ease;
+}
+
+.sensorForm :hover{
+    color: #333;
+}
+
+  

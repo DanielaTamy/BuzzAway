@@ -1,0 +1,26 @@
+{% extends "baseAdmin.html" %}
+<html>
+<head>
+    {% block title %}
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="5">
+    {% endblock %}
+</head>
+<body>
+    <div id="content">
+        {% block content %}
+        <ul>
+            {% for key, value in values.items() %}
+                {% if key == 'led' %}
+                    <li class="centered">
+                        <p>LED:</p>
+                        <img src="{{ url_for('static', filename='led.png') }}" width="60" height="60" alt="">
+                        <span>{{ value }}</span>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        {% endblock %}
+    </div>
+</body>
+</html>
